@@ -6,10 +6,10 @@
   const jobs = ref([]);
   onMounted(async () => {
     try {
-      const response = await axios.get('http://localhost:8000/jobs');
-      jobs.value = response.data.jobs; // expects an array
+      const response = await axios.get('http://localhost:5000/jobs');
+      jobs.value = response.data;
     } catch (error) {
-      console.error('Error fetching jobs:', error);
+      console.error('Error fetching jobs', error);
     }
   });
   const props = defineProps({
